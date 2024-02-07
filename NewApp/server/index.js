@@ -7,11 +7,11 @@ import postRoutes from './routes/posts.js'
 
 const app = express();
 
-app.use('/posts',postRoutes);
-
 app.use(bodyParser.json({limit: "30mb", extended: true})); // sending images that's why limit 30mb
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
+
+app.use('/posts',postRoutes);
 
 // https://www.mongodb.com/cloud/atlas
 // hosting database on cloud
